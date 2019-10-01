@@ -65,11 +65,12 @@ public class SpreadSheetWriter3 {
                                                     numerictype++;
                                                     seqInt++;
                                                 }
-                                            } else if (cell.getCellType() == CellType.STRING) {
+                                            } else if (cell.getCellType() == CellType.STRING && cell.getCellType() !=  CellType.valueOf("no data") )
+                                            {
                                                 if (cell.getStringCellValue().equalsIgnoreCase("item description") ||
                                                         cell.getStringCellValue().equalsIgnoreCase("enter comments here") ||
-                                                        cell.getStringCellValue().equalsIgnoreCase("$0")
-                                                ) {
+                                                        cell.getStringCellValue().equalsIgnoreCase("$0" )
+                                                    ) {
                                                     if (sequential) {
                                                         cell.setCellValue(seqInt);
                                                     } else {
