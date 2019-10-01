@@ -48,12 +48,13 @@ public class SpreadSheetWriter3 {
                     Iterator localIterator1;
                     Row row;
                     for (Sheet sheet : sheets) {
-                        if(!sheet.getProtect()) {
+                      //  if(!sheet.getProtect())
+                        {
                             for (localIterator1 = sheet.iterator(); localIterator1.hasNext(); ) {
                                 row = (Row) localIterator1.next();
                                 for (Cell cell : row) {
                                     try {
-                                        if (((!cell.getCellStyle().getLocked()) || cell.getCellType() != CellType.ERROR)) {
+                                        if (((!cell.getCellStyle().getLocked()) || cell.getCellType() != CellType.ERROR|| cell.getCellType() !=CellType.FORMULA)) {
                                             if (cell.getCellType() == CellType.NUMERIC) {
                                                 if (cell.getNumericCellValue() == 0.0D) {
                                                     if (sequential) {
@@ -66,7 +67,9 @@ public class SpreadSheetWriter3 {
                                                 }
                                             } else if (cell.getCellType() == CellType.STRING) {
                                                 if (cell.getStringCellValue().equalsIgnoreCase("item description") ||
-                                                        cell.getStringCellValue().equalsIgnoreCase("enter comments here")) {
+                                                        cell.getStringCellValue().equalsIgnoreCase("enter comments here") ||
+                                                        cell.getStringCellValue().equalsIgnoreCase("$0")
+                                                ) {
                                                     if (sequential) {
                                                         cell.setCellValue(seqInt);
                                                     } else {
