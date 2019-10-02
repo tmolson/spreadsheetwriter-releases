@@ -74,7 +74,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
-                                ca.on.gov.test.SpreadSheetWriter3
+                                ca.on.gov.test.ssw.SpreadSheetWriter3
                             </mainClass>
                         </manifest>
                     </archive>
