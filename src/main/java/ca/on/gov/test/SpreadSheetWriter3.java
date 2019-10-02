@@ -12,9 +12,7 @@ public class SpreadSheetWriter3 {
 
     public static void main(String[] args)
     {
-        boolean sequential = true;
-
-        //sequential = Boolean.parseBoolean(args[0]);
+        boolean sequential = Boolean.parseBoolean(args[0]);
 
         int seqInt = 100;
 
